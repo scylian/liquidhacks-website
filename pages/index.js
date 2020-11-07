@@ -1,65 +1,134 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+// React Dependencies
+import React from 'react';
 
-export default function Home() {
+// Material-UI
+import { Container,
+         Typography,
+         Grid,
+         Card,
+         CardContent } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+// Next.js
+import Head from 'next/head'
+
+const useStyles = makeStyles((theme) => ({
+  heroContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6),
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
+  card: {
+    display: 'flex',
+    height: '100%',
+    flexDirection: 'column',
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  textCenter: {
+    textAlign: 'center',
+  },
+  svg: {
+    height: '200px',
+    display: 'block',
+    margin: 'auto'
+  },
+  circle: {
+    fill: 'none',
+    stroke: '#EEE',
+    strokeWidth: '5px',
+  },
+}));
+
+const Home = () => {
+  const classes = useStyles();
+
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Home Page</title>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <main>
+        {/* Hero Unit */}
+        <div className={classes.heroContent}>
+          <Container maxWidth="sm">
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+              Team Liquid Factions
+            </Typography>
+            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              Take a quiz now to determine what Team Liquid Faction you belong to! Then join your teammates and show your colors off on social media!
+            </Typography>
+          </Container>
         </div>
-      </main>
+        {/* End Hero Unit */}
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+        {/* Cards */}
+        <Container className={classes.cardGrid} maxWidth="lg">
+          <Grid container direction="row" justify="center" alignItems="center" spacing={4}>
+            <Grid item xs={12} sm={4}>
+              <Card className={classes.card}>
+                <CardContent className={classes.cardContent}>
+                  <svg className={classes.svg} viewBox="0 0 140 140" preserveAspectRatio="xMinYMin meet">
+                    <g>
+                      <circle r="50" cx="50%" cy="50%" className={classes.circle} />
+                    </g>
+                  </svg>
+                  <Typography variant="h5" component="h2" className={classes.textCenter}>
+                    Faction 1
+                  </Typography>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin metus non magna viverra, vitae semper ligula condimentum. Suspendisse vel bibendum quam. Donec semper tincidunt ante ac vulputate.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+
+            <Grid item xs={12} sm={4}>
+              <Card className={classes.card}>
+                <CardContent className={classes.cardContent}>
+                  <svg className={classes.svg} viewBox="0 0 140 140" preserveAspectRatio="xMinYMin meet">
+                    <g>
+                      <rect width="65%" height="65%" x="25" y="25" className={classes.circle} />
+                    </g>
+                  </svg>
+                  <Typography variant="h5" component="h2" className={classes.textCenter}>
+                    Faction 2
+                  </Typography>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin metus non magna viverra, vitae semper ligula condimentum. Suspendisse vel bibendum quam. Donec semper tincidunt ante ac vulputate.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+
+            <Grid item xs={12} sm={4}>
+              <Card className={classes.card}>
+                <CardContent className={classes.cardContent}>
+                  <svg className={classes.svg} viewBox="0 0 140 140" preserveAspectRatio="xMinYMin meet">
+                    <g>
+                      <polygon points="70 25, 120 110, 20 110" className={classes.circle} />
+                    </g>
+                  </svg>
+                  <Typography variant="h5" component="h2" className={classes.textCenter}>
+                    Faction 3
+                  </Typography>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin metus non magna viverra, vitae semper ligula condimentum. Suspendisse vel bibendum quam. Donec semper tincidunt ante ac vulputate.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+        {/* End Cards */}
+      </main>
+    </>
+  );
 }
+
+export default Home;
