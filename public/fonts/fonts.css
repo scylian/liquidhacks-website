@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-Regular.otf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-Regular-Italic.otf');
+  font-style: italic;
+  font-weight: 400;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-Medium.otf');
+  font-style: normal;
+  font-weight: 500;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-Medium-Italic.otf');
+  font-style: italic;
+  font-weight: 500;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-Light.otf');
+  font-style: normal;
+  font-weight: 200;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-Light-Italic.otf');
+  font-style: italic;
+  font-weight: 200;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-ExtraLight.otf');
+  font-style: normal;
+  font-weight: 100;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-ExtraLight-Italic.otf');
+  font-style: italic;
+  font-weight: 100;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-Bold.otf');
+  font-style: normal;
+  font-weight: 600;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-Bold-Italic.otf');
+  font-style: italic;
+  font-weight: 600;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-ExtraBold.otf');
+  font-style: normal;
+  font-weight: 700;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-ExtraBold-Italic.otf');
+  font-style: italic;
+  font-weight: 700;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-Black.otf');
+  font-style: normal;
+  font-weight: 800;
+  font-display: 'swap';
+}
+@font-face {
+  font-family: 'Kaneda Gothic';
+  src: url('KanedaGothic-Black-Italic.otf');
+  font-style: italic;
+  font-weight: 800;
+  font-display: 'swap';
+}

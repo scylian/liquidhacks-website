@@ -1,4 +1,7 @@
+// Basic Dependencies
 import React from 'react';
+
+//Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -6,6 +9,11 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+
+// Next.js
+import NextLink from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +25,13 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  logo: {
+    width: '100%',
+    cursor: 'pointer'
+  },
+  grid: {
+    padding: theme.spacing(2),
+  }
 }));
 
 export default function ButtonAppBar() {
@@ -24,21 +39,41 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" title={<img src="/images/Logo.png"/>}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            {/* <MenuIcon /> */}
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            TEAM LIQUID
-          </Typography>
-          <Button color="inherit">LATEST</Button>
-          <Button color="inherit">PLAYERS</Button>
-          <Button color="inherit">PARTNERS</Button>
-          <Button color="inherit">STORE</Button>
-          <Button color="inherit">ABOUT US</Button>
-          <Button color="inherit">CAREERS</Button>
-          <Button color="inherit">LOGIN</Button>
+          <Grid container justify={"space-between"} alignItems={"center"} className={classes.grid}>
+            <Grid item xs={2}>
+              <NextLink href="/">
+                <img src="/images/Logo.png" className={classes.logo} />
+              </NextLink>
+            </Grid>
+
+            <Grid item xs={5}>
+              <Grid container justify={"center"}>
+                <NextLink href="/latest">
+                  <Button color="inherit">LATEST</Button>
+                </NextLink>
+                <NextLink href="/players">
+                  <Button color="inherit">PLAYERS</Button>
+                </NextLink>
+                <NextLink href="/partners">
+                  <Button color="inherit">PARTNERS</Button>
+                </NextLink>
+                <NextLink href="/store">
+                  <Button color="inherit">STORE</Button>
+                </NextLink>
+                <NextLink href="/about">
+                  <Button color="inherit">ABOUT US</Button>
+                </NextLink>
+                <NextLink href="/careers">
+                  <Button color="inherit">CAREERS</Button>
+                </NextLink>
+                <NextLink href="/login">
+                  <Button color="inherit">LOGIN</Button>
+                </NextLink>
+              </Grid>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>

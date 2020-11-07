@@ -9,7 +9,21 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { CacheProvider } from '@emotion/core';
 import createCache from '@emotion/cache';
 
-import '../styles/globals.css';
+// Fonts
+import { KanedaGothic,
+         KanedaGothicItalic,
+         KanedaGothicMedium,
+         KanedaGothicMediumItalic,
+         KanedaGothicLight,
+         KanedaGothicLightItalic,
+         KanedaGothicExtraLight,
+         KanedaGothicExtraLightItalic,
+         KanedaGothicBold,
+         KanedaGothicBoldItalic,
+         KanedaGothicExtraBold,
+         KanedaGothicExtraBoldItalic,
+         KanedaGothicBlack,
+         KanedaGothicBlackItalic } from '../constants/fonts';
 
 export const cache = createCache();
 
@@ -19,9 +33,46 @@ const MyApp = ({ Component, pageProps }) => {
   const theme = React.useMemo(
     () =>
       createMuiTheme({
+        typography: {
+          fontFamily: [
+            '"Kaneda Gothic"',
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            'Roboto',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+          ].join(','),
+        },
         palette: {
           type: prefersDarkMode ? 'dark' : 'light',
         },
+        overrides: {
+          MuiCssBaseline: {
+            '@global': {
+              '@font-face': [
+                KanedaGothic,
+                KanedaGothicItalic,
+                KanedaGothicMedium,
+                KanedaGothicMediumItalic,
+                KanedaGothicLight,
+                KanedaGothicLightItalic,
+                KanedaGothicExtraLight,
+                KanedaGothicExtraLightItalic,
+                KanedaGothicBold,
+                KanedaGothicBoldItalic,
+                KanedaGothicExtraBold,
+                KanedaGothicExtraBoldItalic,
+                KanedaGothicBlack,
+                KanedaGothicBlackItalic
+              ]
+            }
+          }
+        }
       }),
     [prefersDarkMode],
   );
@@ -30,6 +81,20 @@ const MyApp = ({ Component, pageProps }) => {
     <CacheProvider value={cache}>
       <Head>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Regular.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Regular-Italic.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Medium.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Medium-Italic.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Light.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Light-Italic.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-ExtraLight.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-ExtraLight-Italic.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Bold.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Bold-Italic.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-ExtraBold.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-ExtraBold-Italic.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Black.otf" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Black-Italic.otf" as="font" crossOrigin="" />
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />

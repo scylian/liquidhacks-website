@@ -12,6 +12,9 @@ import { makeStyles } from '@material-ui/core/styles';
 // Next.js
 import Head from 'next/head'
 
+// Components
+import Layout from '../components/Layout';
+
 const useStyles = makeStyles((theme) => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -48,7 +51,7 @@ const Home = () => {
   const classes = useStyles();
 
   return (
-    <>
+    <Layout>
       <Head>
         <title>Home Page</title>
       </Head>
@@ -127,7 +130,7 @@ const Home = () => {
         </Container>
         {/* End Cards */}
       </main>
-    </>
+    </Layout>
   );
 }
 

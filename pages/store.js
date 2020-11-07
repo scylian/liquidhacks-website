@@ -1,11 +1,11 @@
 import Layout from '../components/Layout';
 
-const About = () => {
+const Store = () => {
   return (
     <Layout>
-      <h1>This is the About page</h1>
+      <h1>This is the Store page</h1>
     </Layout>
   );
 }
 
-export default About;
+export default Store;
