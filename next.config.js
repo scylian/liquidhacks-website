@@ -1,4 +1,4 @@
-const withCss = require('next-css');
+const withCss = require('@zeit/next-css');
 
 module.exports = withCss({
   webpack(config, { dev }) {
