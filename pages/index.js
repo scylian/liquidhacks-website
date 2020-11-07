@@ -21,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(20, 0, 6),
   },
   heroImage: {
+    height: '100vh',
     backgroundImage: 'url(/images/hero-image.jpg)',
     backgroundSize: 'cover',
-    backgroundPosition: 'center',
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -64,13 +64,12 @@ const Home = () => {
       <main>
         {/* Hero Unit */}
         <div className={`${classes.heroContent} ${classes.heroImage}`}>
-          <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Team Liquid Factions
-            </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Take a quiz now to determine what Team Liquid Faction you belong to! Then join your teammates and show your colors off on social media!
-            </Typography>
+          <Container maxWidth="lg">
+            <Grid container justify="flex-end" alignItems="flex-start">
+              <Grid item>
+                <img src="/images/lets-go-liquid.png" />
+              </Grid>
+            </Grid>
           </Container>
         </div>
         {/* End Hero Unit */}

@@ -9,9 +9,14 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 // Next.js
 import NextLink from 'next/link';
+
+// FontAwesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,6 +34,16 @@ const useStyles = makeStyles((theme) => ({
   },
   grid: {
     padding: theme.spacing(2),
+  },
+  button: {
+    marginLeft: theme.spacing(3),
+    letterSpacing: '2px'
+  },
+  buttonContained: {
+    color: theme.palette.primary.main
+  },
+  icon: {
+    margin: theme.spacing(0, 1)
   }
 }));
 
@@ -67,28 +82,56 @@ const Navbar = ({ opacity }) => {
                 </NextLink>
               </Grid>
 
-              <Grid item xs={5}>
-                <Grid container justify={"center"}>
+              <Grid item xs={8}>
+                <Grid container justify={"flex-end"}>
                   <NextLink href="/latest">
-                    <Button color="inherit">LATEST</Button>
+                    <Button  className={classes.button} size="large" color="inherit">
+                      <Typography variant="h4">
+                        LATEST
+                      </Typography>
+                    </Button>
                   </NextLink>
                   <NextLink href="/players">
-                    <Button color="inherit">PLAYERS</Button>
+                    <Button  className={classes.button} size="large" color="inherit">
+                      <Typography variant="h4">
+                        PLAYERS <FontAwesomeIcon icon={faAngleDown} size="sm" className={classes.icon} />
+                      </Typography>
+                      </Button>
                   </NextLink>
                   <NextLink href="/partners">
-                    <Button color="inherit">PARTNERS</Button>
+                    <Button  className={classes.button} size="large" color="inherit">
+                      <Typography variant="h4">
+                        PARTNERS <FontAwesomeIcon icon={faAngleDown} size="sm" className={classes.icon} />
+                      </Typography>
+                      </Button>
                   </NextLink>
                   <NextLink href="/store">
-                    <Button color="inherit">STORE</Button>
+                    <Button  className={classes.button} size="large" color="inherit">
+                      <Typography variant="h4">
+                        STORE
+                      </Typography>
+                      </Button>
                   </NextLink>
                   <NextLink href="/about">
-                    <Button color="inherit">ABOUT US</Button>
+                    <Button  className={classes.button} size="large" color="inherit">
+                      <Typography variant="h4">
+                        ABOUT US
+                      </Typography>
+                      </Button>
                   </NextLink>
                   <NextLink href="/careers">
-                    <Button color="inherit">CAREERS</Button>
+                    <Button  className={classes.button} size="large" color="inherit">
+                      <Typography variant="h4">
+                        CAREERS
+                      </Typography>
+                      </Button>
                   </NextLink>
                   <NextLink href="/login">
-                    <Button color="inherit">LOGIN</Button>
+                    <Button  className={`${classes.button} ${classes.buttonContained}`} size="large" variant="contained" color="inherit">
+                      <Typography variant="h4">
+                        LOGIN
+                      </Typography>
+                      </Button>
                   </NextLink>
                 </Grid>
               </Grid>
