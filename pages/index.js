@@ -10,20 +10,27 @@ import { Container,
 import { makeStyles } from '@material-ui/core/styles';
 
 // Next.js
-import Head from 'next/head'
+import Head from 'next/head';
 
 // Components
 import Layout from '../components/Layout';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(20, 0, 6),
   },
   heroImage: {
     height: '100vh',
     backgroundImage: 'url(/images/hero-image.jpg)',
     backgroundSize: 'cover',
+    [theme.breakpoints.down('sm')]: {
+      backgroundPosition: 'center'
+    }
+  },
+  liquidText: {
+    [theme.breakpoints.down('sm')]: {
+      width: '40vh'
+    }
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -56,7 +63,7 @@ const Home = () => {
   const classes = useStyles();
 
   return (
-    <Layout navOpacity={true}>
+    <Layout navOpacity={true} barVariant='fixed'>
       <Head>
         <title>Home Page</title>
       </Head>
@@ -67,7 +74,7 @@ const Home = () => {
           <Container maxWidth="lg">
             <Grid container justify="flex-end" alignItems="flex-start">
               <Grid item>
-                <img src="/images/lets-go-liquid.png" />
+                <img src="/images/lets-go-liquid.png" className={classes.liquidText} />
               </Grid>
             </Grid>
           </Container>

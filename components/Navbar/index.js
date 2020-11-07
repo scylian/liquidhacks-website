@@ -1,5 +1,5 @@
 // Basic Dependencies
-import React from 'react';
+import React, { useState } from 'react';
 
 //Material-UI
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -13,20 +13,22 @@ import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Hidden from '@material-ui/core/Hidden';
+import Collapse from '@material-ui/core/Collapse';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 // Next.js
 import NextLink from 'next/link';
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    textAlign: 'right'
   },
   title: {
     flexGrow: 1,
@@ -40,14 +42,17 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginLeft: theme.spacing(3),
-    letterSpacing: '2px'
+    letterSpacing: '2px',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    }
   },
   buttonContained: {
     color: theme.palette.primary.main
   },
   icon: {
     margin: theme.spacing(0, 1)
-  }
+  },
 }));
 
 const ScrollHandler = props => {
@@ -70,85 +75,91 @@ const ScrollHandler = props => {
   );
 };
 
-const Navbar = ({ opacity }) => {
+const Navbar = ({ opacity, barVariant }) => {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const theme = useTheme();
+  const [collapsed, setCollapsed] = useState(false);
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const handleCollapse = () => {
+    setCollapsed((prev) => !prev);
+  }
 
   return (
     <div className={classes.root} >
       <ScrollHandler opacity={opacity}>
-        <AppBar position="fixed" title={<img src="/images/Logo.png"/>}>
+        <AppBar position={barVariant} title={<img src="/images/Logo.png"/>}>
           <Toolbar>
             <Grid container justify={"space-between"} alignItems={"center"} className={classes.grid}>
-              <Grid item xs={2}>
+              <Grid item sm={2} xs={6}>
                 <NextLink href="/">
                   <img src="/images/Logo.png" className={classes.logo} />
                 </NextLink>
               </Grid>
 
-              <Grid item xs={8}>
-                <Grid container justify={"flex-end"}>
-
-                <Hidden smDown>
-                  <NextLink href="/latest">
-                    <Button  className={classes.button} size="large" color="inherit">
-                      <Typography variant="h4">
-                        LATEST
-                      </Typography>
-                    </Button>
-                  </NextLink>
-                  <NextLink href="/players">
-                    <Button  className={classes.button} size="large" color="inherit">
-                      <Typography variant="h4">
-                        PLAYERS <FontAwesomeIcon icon={faAngleDown} size="sm" className={classes.icon} />
-                      </Typography>
-                      </Button>
-                  </NextLink>
-                  <NextLink href="/partners">
-                    <Button  className={classes.button} size="large" color="inherit">
-                      <Typography variant="h4">
-                        PARTNERS <FontAwesomeIcon icon={faAngleDown} size="sm" className={classes.icon} />
-                      </Typography>
-                      </Button>
-                  </NextLink>
-                  <NextLink href="/store">
-                    <Button  className={classes.button} size="large" color="inherit">
-                      <Typography variant="h4">
-                        STORE
-                      </Typography>
-                      </Button>
-                  </NextLink>
-                  <NextLink href="/about">
-                    <Button  className={classes.button} size="large" color="inherit">
-                      <Typography variant="h4">
-                        ABOUT US
-                      </Typography>
-                      </Button>
-                  </NextLink>
-                  <NextLink href="/careers">
-                    <Button  className={classes.button} size="large" color="inherit">
-                      <Typography variant="h4">
-                        CAREERS
-                      </Typography>
-                      </Button>
-                  </NextLink>
-                  <NextLink href="/login">
-                    <Button  className={`${classes.button} ${classes.buttonContained}`} size="large" variant="contained" color="inherit">
-                      <Typography variant="h4">
-                        LOGIN
-                      </Typography>
-                      </Button>
-                  </NextLink>
-
-                  </Hidden>
+              <Hidden mdUp>
+                <Grid item xs={3} className={classes.menuButton}>
+                  <Button onClick={() => handleCollapse()}>
+                    <FontAwesomeIcon icon={faBars} size="2x" />
+                  </Button>
                 </Grid>
+              </Hidden>
+
+              <Grid item xs={12} sm={8}>
+                <Collapse in={isMobile ? collapsed : true}>
+                  <Grid container justify={"flex-end"}>
+                    <NextLink href="/latest">
+                      <Button className={classes.button} size="large" color="inherit">
+                        <Typography variant="h4">
+                          LATEST
+                        </Typography>
+                      </Button>
+                    </NextLink>
+                    <NextLink href="/players">
+                      <Button  className={classes.button} size="large" color="inherit">
+                        <Typography variant="h4">
+                          PLAYERS <FontAwesomeIcon icon={faAngleDown} size="sm" className={classes.icon} />
+                        </Typography>
+                        </Button>
+                    </NextLink>
+                    <NextLink href="/partners">
+                      <Button  className={classes.button} size="large" color="inherit">
+                        <Typography variant="h4">
+                          PARTNERS
+                        </Typography>
+                        </Button>
+                    </NextLink>
+                    <NextLink href="/store">
+                      <Button  className={classes.button} size="large" color="inherit">
+                        <Typography variant="h4">
+                          STORE
+                        </Typography>
+                        </Button>
+                    </NextLink>
+                    <NextLink href="/about">
+                      <Button  className={classes.button} size="large" color="inherit">
+                        <Typography variant="h4">
+                          ABOUT US
+                        </Typography>
+                        </Button>
+                    </NextLink>
+                    <NextLink href="/careers">
+                      <Button  className={classes.button} size="large" color="inherit">
+                        <Typography variant="h4">
+                          CAREERS
+                        </Typography>
+                        </Button>
+                    </NextLink>
+                    <NextLink href="/login">
+                      <Button  className={`${classes.button} ${classes.buttonContained}`} size="large" variant="contained" color="inherit">
+                        <Typography variant="h4">
+                          LOGIN
+                        </Typography>
+                        </Button>
+                    </NextLink>
+
+                  </Grid>
+                </Collapse>
               </Grid>
             </Grid>
           </Toolbar>
