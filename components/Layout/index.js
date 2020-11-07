@@ -1,10 +1,12 @@
 import Navbar from '../Navbar';
+import Footer from '../Footer';
 
-const Layout = ({children}) => {
+const Layout = ({ navOpacity, children }) => {
   return (
     <>
-      <Navbar />
+      <Navbar opacity={navOpacity} />
       {children}
+      <Footer />
     </>
   )
 }

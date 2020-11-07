@@ -8,6 +8,7 @@ import { useMediaQuery, CssBaseline } from '@material-ui/core';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { CacheProvider } from '@emotion/core';
 import createCache from '@emotion/cache';
+import { DEEP_NAVY, LIQUID_BLUE, PITCH_WHITE, LIQUID_GOLD_DARK, LIQUID_GOLD_LIGHT } from '../constants/liquidcolors';
 
 // Fonts
 import { KanedaGothic,
@@ -24,6 +25,12 @@ import { KanedaGothic,
          KanedaGothicExtraBoldItalic,
          KanedaGothicBlack,
          KanedaGothicBlackItalic } from '../constants/fonts';
+
+// FontAwesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
+library.add(fab);
 
 export const cache = createCache();
 
@@ -50,6 +57,17 @@ const MyApp = ({ Component, pageProps }) => {
         },
         palette: {
           type: prefersDarkMode ? 'dark' : 'light',
+          primary: {
+            main: LIQUID_BLUE,
+            dark: DEEP_NAVY,
+          },
+          secondary: {
+            main: PITCH_WHITE
+          },
+          info: {
+            light: LIQUID_GOLD_LIGHT,
+            main: LIQUID_GOLD_DARK,
+          }
         },
         overrides: {
           MuiCssBaseline: {
