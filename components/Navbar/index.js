@@ -10,6 +10,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Hidden from '@material-ui/core/Hidden';
 
 // Next.js
 import NextLink from 'next/link';
@@ -69,6 +72,14 @@ const ScrollHandler = props => {
 
 const Navbar = ({ opacity }) => {
   const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className={classes.root} >
@@ -84,6 +95,8 @@ const Navbar = ({ opacity }) => {
 
               <Grid item xs={8}>
                 <Grid container justify={"flex-end"}>
+
+                <Hidden smDown>
                   <NextLink href="/latest">
                     <Button  className={classes.button} size="large" color="inherit">
                       <Typography variant="h4">
@@ -133,6 +146,8 @@ const Navbar = ({ opacity }) => {
                       </Typography>
                       </Button>
                   </NextLink>
+
+                  </Hidden>
                 </Grid>
               </Grid>
             </Grid>
