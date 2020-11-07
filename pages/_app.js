@@ -10,27 +10,12 @@ import { CacheProvider } from '@emotion/core';
 import createCache from '@emotion/cache';
 import { DEEP_NAVY, LIQUID_BLUE, PITCH_WHITE, LIQUID_GOLD_DARK, LIQUID_GOLD_LIGHT } from '../constants/liquidcolors';
 
-// Fonts
-import { KanedaGothic,
-         KanedaGothicItalic,
-         KanedaGothicMedium,
-         KanedaGothicMediumItalic,
-         KanedaGothicLight,
-         KanedaGothicLightItalic,
-         KanedaGothicExtraLight,
-         KanedaGothicExtraLightItalic,
-         KanedaGothicBold,
-         KanedaGothicBoldItalic,
-         KanedaGothicExtraBold,
-         KanedaGothicExtraBoldItalic,
-         KanedaGothicBlack,
-         KanedaGothicBlackItalic } from '../constants/fonts';
-
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-library.add(fab);
+library.add(fab, faEnvelope);
 
 export const cache = createCache();
 
@@ -69,28 +54,6 @@ const MyApp = ({ Component, pageProps }) => {
             main: LIQUID_GOLD_DARK,
           }
         },
-        overrides: {
-          MuiCssBaseline: {
-            '@global': {
-              '@font-face': [
-                KanedaGothic,
-                KanedaGothicItalic,
-                KanedaGothicMedium,
-                KanedaGothicMediumItalic,
-                KanedaGothicLight,
-                KanedaGothicLightItalic,
-                KanedaGothicExtraLight,
-                KanedaGothicExtraLightItalic,
-                KanedaGothicBold,
-                KanedaGothicBoldItalic,
-                KanedaGothicExtraBold,
-                KanedaGothicExtraBoldItalic,
-                KanedaGothicBlack,
-                KanedaGothicBlackItalic
-              ]
-            }
-          }
-        }
       }),
     [prefersDarkMode],
   );
