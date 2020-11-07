@@ -17,7 +17,8 @@ import Collapse from '@material-ui/core/Collapse';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 // Next.js
-import NextLink from 'next/link';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -74,6 +75,24 @@ const ScrollHandler = props => {
     </Slide>
   );
 };
+
+const NextLink =({children, href}) => {
+  const router = useRouter();
+  const theme = useTheme();
+
+  const style = {
+    color: router.pathname === href ? theme.palette.info.main : theme.palette.secondary.main,
+    textDecoration: 'none'
+  }
+
+  return (
+    <Link href={href}>
+      <a style={style}>
+        {children}
+      </a>
+    </Link>
+  )
+}
 
 const Navbar = ({ opacity, barVariant }) => {
   const classes = useStyles();
