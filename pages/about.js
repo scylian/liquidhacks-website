@@ -8,6 +8,7 @@ import Layout from '../components/Layout';
 import { Container, Typography, Grid, Toolbar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
+import Button from '@material-ui/core/Button';
 
 // Next.js
 import Head from 'next/head';
@@ -40,6 +41,11 @@ const useStyles = makeStyles((theme) => ({
     height: '2px',
     backgroundColor: theme.palette.info.main,
     margin: theme.spacing(4, 4, 0, 0),
+  },
+  dividerVertical: {
+    width: theme.spacing(6),
+    backgroundColor: theme.palette.info.main,
+    margin: theme.spacing(0, 6, 0, 0)
   },
   dividerBlue: {
     height: theme.spacing(6),
@@ -82,9 +88,46 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(2),
   },
   contactUs: {
-    // padding: theme.spacing(4, 0),
     backgroundColor: theme.palette.secondary.main,
-    color: theme.palette.primary.main
+    color: theme.palette.primary.main,
+    paddingBottom: theme.spacing(10)
+  },
+  emails: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
+    borderRadius: '0 15px 15px 0',
+  },
+  emailLinks: {
+    padding: theme.spacing(5, 0),
+    '& h4': {
+      margin: theme.spacing(2, 0, 1)
+    },
+    '& button': {
+      margin: theme.spacing(0, 0, 2),
+      padding: theme.spacing(0, 6),
+      fontSize: '20px',
+      letterSpacing: '1px',
+      fontWeight: '600',
+      color: theme.palette.primary.main
+    }
+  },
+  founders: {
+    backgroundColor: theme.palette.info.main,
+    borderRadius: '15px',
+    letterSpacing: '1px',
+    padding: theme.spacing(5, 8),
+    '& h4': {
+      fontSize: '26px'
+    }
+  },
+  founderName: {
+    padding: theme.spacing(2, 0, 1),
+    color: theme.palette.secondary.main,
+  },
+  founderInfo: {
+    padding: theme.spacing(0, 0, 2),
+    color: theme.palette.primary.dark,
+    lineHeight: '20px'
   }
 }));
 
@@ -212,8 +255,59 @@ const About = () => {
                 <b>CONTACT US</b>
               </Typography>
             </Grid>
+
+            <Grid item sm={7} className={classes.emails}>
+              <Grid container justify="flex-start">
+                <Divider orientation="vertical" flexItem className={classes.dividerVertical} />
+                <Grid item sm={8} className={classes.emailLinks}>
+                  <Typography variant="h4">
+                    For contacting the team please email at:
+                  </Typography>
+                  <Button variant="contained">support@teamliquid.net</Button>
+
+                  <Typography variant="h4">
+                    For inquiries about sponsorships please contact:
+                  </Typography>
+                  <Button variant="contained">sponsorships@teamliquid.net</Button>
+
+                  <Typography variant="h4">
+                    For media / press inquiries please contact:
+                  </Typography>
+                  <Button variant="contained">pr@teamliquid.net</Button>
+                </Grid>
+                <Divider orientation="vertical" flexItem className={classes.dividerVertical} />
+                <Divider orientation="vertical" flexItem className={classes.dividerVertical} />
+              </Grid>
+            </Grid>
+            <Grid item sm={4} className={classes.founders}>
+              <Grid container direction="column" alignItems="flex-end">
+                <Typography variant="h4" className={classes.founderName} align="right">
+                  Victor "Liquid`Nazgul" Goossens
+                </Typography>
+                <Typography variant="h4" className={classes.founderInfo} align="right">
+                  Founder, Owner and Co-CEO<br/>@LiquidNazgul
+                </Typography>
+
+                <Typography variant="h4" className={classes.founderName} align="right">
+                  Steve "LiQuiD112" Arhancet
+                </Typography>
+                <Typography variant="h4" className={classes.founderInfo} align="right">
+                  Owner and Co-CEO<br/>@LiQuiD112
+                </Typography>
+
+                <Typography variant="h4" className={classes.founderName} align="right">
+                  Richard "R1CH" Stanway
+                </Typography>
+                <Typography variant="h4" className={classes.founderInfo} align="right">
+                  Information Security and CTO<br/>@R1CH_TL
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
         </div>
+
+        <Divider className={classes.divider}/>
+
       </main>
     </Layout>
   );
