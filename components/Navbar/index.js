@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(3),
     letterSpacing: '2px',
     [theme.breakpoints.down('sm')]: {
+      marginLeft: '0',
       width: '100%',
     }
   },
@@ -126,7 +127,7 @@ const Navbar = ({ opacity, barVariant }) => {
 
               <Grid item xs={12} sm={8}>
                 <Collapse in={isMobile ? collapsed : true}>
-                  <Grid container justify={"flex-end"}>
+                  <Grid container direction={isMobile ? "column" : "row"} justify="flex-end" alignItems="center">
                     <NextLink href="/latest">
                       <Button className={classes.button} size="large" color="inherit">
                         <Typography variant="h4">

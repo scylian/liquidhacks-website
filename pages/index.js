@@ -22,6 +22,19 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     backgroundImage: 'url(/images/hero-image.jpg)',
     backgroundSize: 'cover',
+    [theme.breakpoints.down('sm')]: {
+      backgroundPosition: 'center'
+    }
+  },
+  liquidImage: {
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'right'
+    },
+    '& img': {
+      [theme.breakpoints.down('sm')]: {
+        width: '70%'
+      }
+    }
   },
   infoCard: {
     backgroundColor: theme.palette.secondary.main,
@@ -56,7 +69,7 @@ const Home = () => {
         <div className={`${classes.heroContent} ${classes.heroImage}`}>
           <Container maxWidth="lg">
             <Grid container justify="flex-end" alignItems="flex-start">
-              <Grid item>
+              <Grid item className={classes.liquidImage}>
                 <img src="/images/lets-go-liquid.png" />
               </Grid>
             </Grid>
