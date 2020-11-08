@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   circleIcon: {
     boxShadow: '0 0 1px rgba(0, 0, 0, 0.05)',
-    margin: theme.spacing(3, 0, 9),
+    margin: theme.spacing(3, 1, 9),
     transform: 'scale(1)',
     border: 'none',
     borderRadius: '56px',
@@ -59,9 +59,9 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         <Typography variant="h5" align="center">CONNECT WITH US</Typography>
-        <Grid container justify="space-evenly" alignItems="center" className={classes.grid}>
+        <Grid container justify="center" alignItems="center" className={classes.grid}>
           <FontAwesomeIcon icon={['fab', 'twitter']} size="4x" className={classes.circleIcon} />
           <FontAwesomeIcon icon={['fab', 'facebook-f']} size="4x" className={classes.circleIcon} />
           <FontAwesomeIcon icon={['fab', 'instagram']} size="4x" className={classes.circleIcon} />
@@ -78,7 +78,7 @@ const Footer = () => {
       </Container>
       <Container maxWidth="sm">
         <Typography variant="h5" align="center" className={classes.title}>OUR PARTNERS</Typography>
-        <Grid container justify="space-evenly" alignItems="center" className={classes.grid}>
+        <Grid container justify="space-evenly" alignItems="center">
           <Grid item sm={7} className={classes.partner}>
             <img src="/images/alienware.png" width="100%" />
           </Grid>

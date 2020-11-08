@@ -62,20 +62,6 @@ const MyApp = ({ Component, pageProps }) => {
     <CacheProvider value={cache}>
       <Head>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Regular.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Regular-Italic.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Medium.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Medium-Italic.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Light.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Light-Italic.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-ExtraLight.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-ExtraLight-Italic.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Bold.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Bold-Italic.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-ExtraBold.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-ExtraBold-Italic.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Black.otf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/Kaneda Gothic Family/KanedaGothic-Black-Italic.otf" as="font" crossOrigin="" />
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />

@@ -64,7 +64,7 @@ const ScrollHandler = props => {
     target: props.window ? window() : undefined,
   });
 
-  const primaryColor = props.opacity ? fade(theme.palette.primary.main, 0.8) : theme.palette.primary.main;
+  const primaryColor = props.opacity ? fade(theme.palette.primary.dark, 0.8) : theme.palette.primary.dark;
   const style = {
     backgroundColor: primaryColor,
   }
@@ -148,13 +148,13 @@ const Navbar = ({ opacity, barVariant }) => {
                         </Typography>
                         </Button>
                     </NextLink>
-                    <NextLink href="/store">
+                    <a href="https://store.teamliquid.com" style={{color:'#fff',textDecoration:'none'}}>
                       <Button  className={classes.button} size="large" color="inherit">
                         <Typography variant="h4">
                           STORE
                         </Typography>
                         </Button>
-                    </NextLink>
+                    </a>
                     <NextLink href="/about">
                       <Button  className={classes.button} size="large" color="inherit">
                         <Typography variant="h4">
