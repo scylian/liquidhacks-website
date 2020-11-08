@@ -8,27 +8,20 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 // Next.js
-import Head from 'next/head';
+import Head from 'next/head'
 
 // Components
 import Layout from '../components/Layout';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
+    backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(20, 0, 6),
   },
   heroImage: {
     height: '100vh',
     backgroundImage: 'url(/images/hero-image.jpg)',
     backgroundSize: 'cover',
-    [theme.breakpoints.down('sm')]: {
-      backgroundPosition: 'center'
-    }
-  },
-  liquidText: {
-    [theme.breakpoints.down('sm')]: {
-      width: '40vh'
-    }
   },
   infoCard: {
     backgroundColor: theme.palette.secondary.main,
@@ -53,7 +46,7 @@ const Home = () => {
   const classes = useStyles();
 
   return (
-    <Layout navOpacity={true} barVariant='fixed'>
+    <Layout navOpacity={true}>
       <Head>
         <title>Home Page</title>
       </Head>
@@ -64,7 +57,7 @@ const Home = () => {
           <Container maxWidth="lg">
             <Grid container justify="flex-end" alignItems="flex-start">
               <Grid item>
-                <img src="/images/lets-go-liquid.png" className={classes.liquidText} />
+                <img src="/images/lets-go-liquid.png" />
               </Grid>
             </Grid>
           </Container>
