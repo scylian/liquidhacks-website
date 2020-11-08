@@ -134,13 +134,13 @@ const Navbar = ({ opacity, barVariant }) => {
                         </Typography>
                       </Button>
                     </NextLink>
-                    <NextLink href="/players">
+                    {/* <NextLink href="/players">
                       <Button  className={classes.button} size="large" color="inherit">
                         <Typography variant="h4">
                           PLAYERS
                         </Typography>
                         </Button>
-                    </NextLink>
+                    </NextLink> */}
                     <NextLink href="/partners">
                       <Button  className={classes.button} size="large" color="inherit">
                         <Typography variant="h4">
@@ -162,7 +162,7 @@ const Navbar = ({ opacity, barVariant }) => {
                         </Typography>
                         </Button>
                     </NextLink>
-                    <NextLink href="/quiz">
+                    <NextLink href="/quiz/landing">
                       <Button  className={classes.button} size="large" color="inherit">
                         <Typography variant="h4">
                           QUIZ

@@ -86,8 +86,46 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const getCards = (num) => {
+  const classes = useStyles();
+  let cards = [];
+
+  for (let i = 0; i < num; i++) {
+    cards.push(<Grid item sm={3}>
+                <Card className={classes.card}>
+                  <CardActionArea>
+                    <CardMedia
+                      className={classes.media}
+                      image="/images/card-img.png"
+                      title="Tactial: Rise of a Carry"
+                    />
+                    <CardContent className={classes.cardContent}> 
+                      <Typography className={classes.cardCategory}>
+                        League of Legends
+                      </Typography>
+                      <Typography variant="h3" component="h3" className={classes.cardTitle}>
+                        Tactical: Rise of a Carry
+                      </Typography>
+                      <Typography variant="body" component="p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium fermentum purus, vel mollis felis interdum a.
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <Button size="large" color="primary">
+                      Read
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>);
+  }
+
+  return cards;
+}
+
 const Latest = () => {
   const classes = useStyles();
+  const Cards = getCards(8);
 
   return (
     <Layout barVariant='static'>
@@ -182,169 +220,8 @@ const Latest = () => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid container justify="flex-start" direction="row" spacing={4} className={classes.fullHeight}>
-              <Grid item lg={3}>
-                <Card className={classes.card}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image="/images/card-img.png"
-                      title="Tactial: Rise of a Carry"
-                    />
-                    <CardContent className={classes.cardContent}> 
-                      <Typography className={classes.cardCategory}>
-                        League of Legends
-                      </Typography>
-                      <Typography variant="h3" component="h3" className={classes.cardTitle}>
-                        Tactical: Rise of a Carry
-                      </Typography>
-                      <Typography variant="body" component="p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium fermentum purus, vel mollis felis interdum a.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="large" color="primary">
-                      Read
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              <Grid item lg={3}>
-                <Card className={classes.card}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image="/images/card-img.png"
-                      title="Tactial: Rise of a Carry"
-                    />
-                    <CardContent className={classes.cardContent}> 
-                      <Typography className={classes.cardCategory}>
-                        League of Legends
-                      </Typography>
-                      <Typography variant="h3" component="h3" className={classes.cardTitle}>
-                        Tactical: Rise of a Carry
-                      </Typography>
-                      <Typography variant="body" component="p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium fermentum purus, vel mollis felis interdum a.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="large" color="primary">
-                      Read
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              <Grid item lg={3}>
-                <Card className={classes.card}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image="/images/card-img.png"
-                      title="Tactial: Rise of a Carry"
-                    />
-                    <CardContent className={classes.cardContent}> 
-                      <Typography className={classes.cardCategory}>
-                        League of Legends
-                      </Typography>
-                      <Typography variant="h3" component="h3" className={classes.cardTitle}>
-                        Tactical: Rise of a Carry
-                      </Typography>
-                      <Typography variant="body" component="p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium fermentum purus, vel mollis felis interdum a.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="large" color="primary">
-                      Read
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              <Grid item lg={3}>
-                <Card className={classes.card}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image="/images/card-img.png"
-                      title="Tactial: Rise of a Carry"
-                    />
-                    <CardContent className={classes.cardContent}> 
-                      <Typography className={classes.cardCategory}>
-                        League of Legends
-                      </Typography>
-                      <Typography variant="h3" component="h3" className={classes.cardTitle}>
-                        Tactical: Rise of a Carry
-                      </Typography>
-                      <Typography variant="body" component="p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium fermentum purus, vel mollis felis interdum a.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="large" color="primary">
-                      Read
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              <Grid item lg={3}>
-                <Card className={classes.card}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image="/images/card-img.png"
-                      title="Tactial: Rise of a Carry"
-                    />
-                    <CardContent className={classes.cardContent}> 
-                      <Typography className={classes.cardCategory}>
-                        League of Legends
-                      </Typography>
-                      <Typography variant="h3" component="h3" className={classes.cardTitle}>
-                        Tactical: Rise of a Carry
-                      </Typography>
-                      <Typography variant="body" component="p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium fermentum purus, vel mollis felis interdum a.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="large" color="primary">
-                      Read
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              <Grid item lg={3}>
-                <Card className={classes.card}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image="/images/card-img.png"
-                      title="Tactial: Rise of a Carry"
-                    />
-                    <CardContent className={classes.cardContent}> 
-                      <Typography className={classes.cardCategory}>
-                        League of Legends
-                      </Typography>
-                      <Typography variant="h3" component="h3" className={classes.cardTitle}>
-                        Tactical: Rise of a Carry
-                      </Typography>
-                      <Typography variant="body" component="p">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium fermentum purus, vel mollis felis interdum a.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="large" color="primary">
-                      Read
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
+            <Grid container justify="center" alignItems="center">
+              {Cards}
             </Grid>
           </Container>
         </div>

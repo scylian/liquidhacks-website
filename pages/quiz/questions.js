@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 // Components
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 
 // Material-UI
 import Container from '@material-ui/core/Container';
