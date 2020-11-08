@@ -39,10 +39,13 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '32px',
     },
     quizBtn: {
+        boxShadow: '0 0 1px rgba(0, 0, 0, 0.05)',
         backgroundColor: theme.palette.primary.main,
         marginTop: theme.spacing(6),
-        scale: '200%',
+        padding: theme.spacing(3),
+        transition: 'transform 0.2s',
         '&:hover': {
+            transform: 'scale(1.2)',
             backgroundColor: theme.palette.info.main,
         },
     },
@@ -84,7 +87,7 @@ const Latest = () => {
                     </Typography>
                     </Grid>
                     <Grid item>
-                    <Typography variant="body">
+                    <Typography variant="body1">
                         Your path through this quiz will determine what team you belong to. <br />
                         Which team will you land in?
                     </Typography>
@@ -113,8 +116,10 @@ const Latest = () => {
 
                 <Grid container justify="center" alignItems="center">
                     <Grid item>
-                        <Button className={classes.quizBtn}>
-                            Take the Quiz
+                        <Button size="large" className={classes.quizBtn}>
+                            <Typography variant="h4">
+                                Take the Quiz
+                            </Typography>
                         </Button>
                     </Grid>
                 </Grid>
