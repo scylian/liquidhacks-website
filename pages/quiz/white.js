@@ -71,7 +71,7 @@ const Twitter = () => {
         <div className={classes.twitterFeed}>
           <Container maxWidth="md">
             <Grid container justify="center">
-              {data.statuses.length > 0 ? data.statuses.map((tweet) => (
+              {data.statuses.map((tweet) => (
                 <Grid item sm={3}>
                   <Card>
                     <CardHeader
@@ -96,7 +96,7 @@ const Twitter = () => {
                     </CardContent>
                   </Card>
                 </Grid>
-              )) : null}
+              ))}
             </Grid>
           </Container>
         </div>
