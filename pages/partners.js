@@ -19,7 +19,8 @@ import Head from 'next/head';
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    backgroundColor: theme.palette.primary.dark
+    backgroundColor: theme.palette.primary.dark,
+    color: theme.palette.secondary.main
   },
   heroContent: {
     color: theme.palette.secondary.main,
