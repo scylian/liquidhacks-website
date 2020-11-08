@@ -22,7 +22,7 @@ import { useRouter } from 'next/router';
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -137,7 +137,7 @@ const Navbar = ({ opacity, barVariant }) => {
                     <NextLink href="/players">
                       <Button  className={classes.button} size="large" color="inherit">
                         <Typography variant="h4">
-                          PLAYERS <FontAwesomeIcon icon={faAngleDown} size="sm" className={classes.icon} />
+                          PLAYERS
                         </Typography>
                         </Button>
                     </NextLink>
@@ -162,10 +162,10 @@ const Navbar = ({ opacity, barVariant }) => {
                         </Typography>
                         </Button>
                     </NextLink>
-                    <NextLink href="/careers">
+                    <NextLink href="/quiz">
                       <Button  className={classes.button} size="large" color="inherit">
                         <Typography variant="h4">
-                          CAREERS
+                          QUIZ
                         </Typography>
                         </Button>
                     </NextLink>

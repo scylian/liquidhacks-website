@@ -2,11 +2,9 @@
 import React from 'react';
 
 // Material-UI
-import { Container,
-         Typography,
-         Grid,
-         Card,
-         CardContent } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 // Next.js
@@ -32,31 +30,23 @@ const useStyles = makeStyles((theme) => ({
       width: '40vh'
     }
   },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
+  infoCard: {
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
+    padding: theme.spacing(3)
   },
-  card: {
-    display: 'flex',
-    height: '100%',
-    flexDirection: 'column',
+  infoContainer: {
+    border: `${theme.palette.info.main} 5px solid`,
+    '& h2,h3,h5': {
+      fontFamily: 'Raleway',
+      '& b': {
+        fontWeight: 800
+      }
+    }
   },
-  cardContent: {
-    flexGrow: 1,
-  },
-  textCenter: {
-    textAlign: 'center',
-  },
-  svg: {
-    height: '200px',
-    display: 'block',
-    margin: 'auto'
-  },
-  circle: {
-    fill: 'none',
-    stroke: '#EEE',
-    strokeWidth: '5px',
-  },
+  infoDetail: {
+    marginTop: theme.spacing(5)
+  }
 }));
 
 const Home = () => {
@@ -80,120 +70,38 @@ const Home = () => {
           </Container>
         </div>
         {/* End Hero Unit */}
-
-        {/* Cards */}
-        <Container className={classes.cardGrid} maxWidth="lg">
-          <Grid container direction="row" justify="center" alignItems="center" spacing={4}>
-            <Grid item xs={12} sm={4}>
-              <Card className={classes.card}>
-                <CardContent className={classes.cardContent}>
-                  <svg className={classes.svg} viewBox="0 0 140 140" preserveAspectRatio="xMinYMin meet">
-                    <g>
-                      <circle r="50" cx="50%" cy="50%" className={classes.circle} />
-                    </g>
-                  </svg>
-                  <Typography variant="h5" component="h2" className={classes.textCenter}>
-                    Faction 1
-                  </Typography>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin metus non magna viverra, vitae semper ligula condimentum. Suspendisse vel bibendum quam. Donec semper tincidunt ante ac vulputate.
-                  </Typography>
-                </CardContent>
-              </Card>
+        
+        <div className={classes.infoCard}>
+          <Grid container className={classes.infoContainer} justify="space-between" alignItems="center">
+            <Grid item sm="2">
+              <img src="/images/pillar.png" />
             </Grid>
-
-            <Grid item xs={12} sm={4}>
-              <Card className={classes.card}>
-                <CardContent className={classes.cardContent}>
-                  <svg className={classes.svg} viewBox="0 0 140 140" preserveAspectRatio="xMinYMin meet">
-                    <g>
-                      <rect width="65%" height="65%" x="25" y="25" className={classes.circle} />
-                    </g>
-                  </svg>
-                  <Typography variant="h5" component="h2" className={classes.textCenter}>
-                    Faction 2
-                  </Typography>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin metus non magna viverra, vitae semper ligula condimentum. Suspendisse vel bibendum quam. Donec semper tincidunt ante ac vulputate.
-                  </Typography>
-                </CardContent>
-              </Card>
+            <Grid item sm={8}>
+              <Typography variant="h3" align="center">
+                <b>Team Liquid</b> is a world renowned professional gaming organization established in 2000. Since our grassroots beginnings, we have grown into a multifaceted global company with unparalleled reach in the industry.
+              </Typography>
+              <Container maxWidth="md" className={classes.infoDetail}>
+                <Grid container justify="space-between">
+                  <Grid item={4}>
+                    <Typography align="center" variant="h2"><b>60</b></Typography>
+                    <Typography align="center" variant="h5">championship caliber athletes</Typography>
+                  </Grid>
+                  <Grid item={4}>
+                    <Typography align="center" variant="h3"><b>in</b></Typography>
+                  </Grid>
+                  <Grid item={4}>
+                    <Typography align="center" variant="h2"><b>14</b></Typography>
+                    <Typography align="center" variant="h5">world's top games</Typography>
+                  </Grid>
+                </Grid>
+              </Container>
             </Grid>
-
-            <Grid item xs={12} sm={4}>
-              <Card className={classes.card}>
-                <CardContent className={classes.cardContent}>
-                  <svg className={classes.svg} viewBox="0 0 140 140" preserveAspectRatio="xMinYMin meet">
-                    <g>
-                      <polygon points="70 25, 120 110, 20 110" className={classes.circle} />
-                    </g>
-                  </svg>
-                  <Typography variant="h5" component="h2" className={classes.textCenter}>
-                    Faction 3
-                  </Typography>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin metus non magna viverra, vitae semper ligula condimentum. Suspendisse vel bibendum quam. Donec semper tincidunt ante ac vulputate.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-
-            <Grid item xs={12} sm={4}>
-              <Card className={classes.card}>
-                <CardContent className={classes.cardContent}>
-                  <svg className={classes.svg} viewBox="0 0 140 140" preserveAspectRatio="xMinYMin meet">
-                    <g>
-                      <circle r="50" cx="50%" cy="50%" className={classes.circle} />
-                    </g>
-                  </svg>
-                  <Typography variant="h5" component="h2" className={classes.textCenter}>
-                    Faction 1
-                  </Typography>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin metus non magna viverra, vitae semper ligula condimentum. Suspendisse vel bibendum quam. Donec semper tincidunt ante ac vulputate.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-
-            <Grid item xs={12} sm={4}>
-              <Card className={classes.card}>
-                <CardContent className={classes.cardContent}>
-                  <svg className={classes.svg} viewBox="0 0 140 140" preserveAspectRatio="xMinYMin meet">
-                    <g>
-                      <rect width="65%" height="65%" x="25" y="25" className={classes.circle} />
-                    </g>
-                  </svg>
-                  <Typography variant="h5" component="h2" className={classes.textCenter}>
-                    Faction 2
-                  </Typography>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin metus non magna viverra, vitae semper ligula condimentum. Suspendisse vel bibendum quam. Donec semper tincidunt ante ac vulputate.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-
-            <Grid item xs={12} sm={4}>
-              <Card className={classes.card}>
-                <CardContent className={classes.cardContent}>
-                  <svg className={classes.svg} viewBox="0 0 140 140" preserveAspectRatio="xMinYMin meet">
-                    <g>
-                      <polygon points="70 25, 120 110, 20 110" className={classes.circle} />
-                    </g>
-                  </svg>
-                  <Typography variant="h5" component="h2" className={classes.textCenter}>
-                    Faction 3
-                  </Typography>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin metus non magna viverra, vitae semper ligula condimentum. Suspendisse vel bibendum quam. Donec semper tincidunt ante ac vulputate.
-                  </Typography>
-                </CardContent>
-              </Card>
+            <Grid item sm="2">
+              <img src="/images/pillar.png" style={{float:'right'}}/>
             </Grid>
           </Grid>
-        </Container>
-        {/* End Cards */}
+        </div>
+
       </main>
     </Layout>
   );

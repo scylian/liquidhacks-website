@@ -5,7 +5,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 
 // Material-UI
-import { Container, Typography, Grid, Toolbar } from '@material-ui/core';
+import { Container, Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';

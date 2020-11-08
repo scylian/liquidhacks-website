@@ -103,3 +103,10 @@
   font-weight: 400;
   font-display: 'swap';
 }
+@font-face {
+  font-family: 'Raleway';
+  src: url('Raleway-Black.ttf');
+  font-style: normal;
+  font-weight: 800;
+  font-display: 'swap';
+}
